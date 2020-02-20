@@ -67,6 +67,21 @@ class Card():
         return self.rank
 
 
+class GameLobbies():
+
+    def __init__(self):
+        self.lobbies = []
+
+    def join_game(self, player, lobby):
+        pass
+
+    def create_game(self, player):
+        pass
+
+    def destroy_game(self, lobby):
+        pass
+
+
 class Game():
 
     def __init__(self, dealer, players):

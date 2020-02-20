@@ -92,6 +92,7 @@ class Game():
         self.players = players
         self.deck = self.shuffle_deck()
         self.round = ""
+        self.playing = False
 
     def __str__(self):
         return "{}".format(self.players[0])
@@ -105,8 +106,9 @@ class Game():
     def start_round(self):
         clear()
         self.round = Round(self.deck, self.dealer, self.players)
+        self.playing = True
         self.take_bets()
-
+        self.playing = False
         print()
         print("New round: 1")
         print("Cashout: 2")
@@ -120,6 +122,9 @@ class Game():
 
     def deal_players(self):
         pass
+
+    def get_state(self):
+        return self.playing
 
 
 class Round():

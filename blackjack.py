@@ -72,14 +72,17 @@ class GameLobbies():
     def __init__(self):
         self.lobbies = []
 
-    def join_game(self, player, lobby):
+    def join_game(self, player, lobby_id):
         pass
 
     def create_game(self, player):
-        pass
+        self.lobbies.append(Game(Dealer(4000), player))
 
-    def destroy_game(self, lobby):
-        pass
+    def destroy_game(self, lobby_id):
+        del self.lobbies[lobby_id]
+
+    def get_game_lobbies(self):
+        return self.lobbies
 
 
 class Game():

@@ -346,9 +346,3 @@ class Gambler(Player):
 
     def set_bet(self, amount):
         self.bet = amount
-
-
-gambler = Gambler("Brandon", 200)
-dealer = Dealer(4000)
-game = Game(dealer, [gambler])
-game.start_round()

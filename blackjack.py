@@ -73,7 +73,10 @@ class GameLobbies():
         self.lobbies = []
 
     def join_game(self, player, lobby_id):
-        pass
+        if self.lobbies[lobby_id].get_state() is False:
+            self.lobbies[lobby_id].join_game(player)
+        else:
+            print("Round in progress")
 
     def create_game(self, player):
         self.lobbies.append(Game(Dealer(4000), player))
@@ -125,6 +128,9 @@ class Game():
 
     def get_state(self):
         return self.playing
+
+    def join_game(self, player):
+        self.players.append(player)
 
 
 class Round():

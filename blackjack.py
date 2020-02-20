@@ -93,6 +93,8 @@ class Game():
         print("New round: 1")
         print("Cashout: 2")
         if int(input("Enter Command")) == 1:
+            if len(self.deck) < 5:
+                self.deck = self.shuffle_deck()
             self.start_round()
 
     def take_bets(self):

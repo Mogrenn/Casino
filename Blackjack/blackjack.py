@@ -5,7 +5,7 @@ import socket
 
 clear = lambda: os.system("clear")
 HOST = "127.0.0.1"
-PORT = "43908"
+PORT = 43908
 
 class Bcolors:
     PURPLE = '\033[95m'
